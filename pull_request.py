@@ -6,10 +6,12 @@ import settings
 
 def get_pull_request():
   g = Github(settings.ENV['USER_GITHUB'], settings.ENV['PSWD_GITHUB'])
-  repo = g.get_repo('my-blog')
+  repo = g.get_repo('EDusik/my-blog')
   try:
-    pull_request = repo.get_pulls('all')
-    return pull_request.name
+    pulls = repo.get_pulls(state='open', sort='created', base='master')
+    # breakpoint()
+    for pr in pulls:
+      return 'Hello, see my new post ' + pr.title + ' in ' + settings.ENV['URL'] + '.'
   except:
     return null
   # breakpoint()

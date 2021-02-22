@@ -5,5 +5,6 @@ ENV = {
 	"ACCESS_SECRET": "",
 	"USER_GITHUB": "",
 	"PSWD_GITHUB": "",
-	"REPO_GITHUB": ""
+	"REPO_GITHUB": "",
+  "URL": ""
 }
