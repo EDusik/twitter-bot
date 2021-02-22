@@ -6,7 +6,7 @@ import settings
 
 def get_pull_request():
   g = Github(settings.ENV['USER_GITHUB'], settings.ENV['PSWD_GITHUB'])
-  repo = g.get_repo('EDusik/my-blog')
+  repo = g.get_repo(settings.ENV['REPO_GITHUB'])
   try:
     pulls = repo.get_pulls(state='open', sort='created', base='master')
     # breakpoint()
