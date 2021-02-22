@@ -18,12 +18,12 @@ This project uses these technologies:
 ## :computer: Commands
 ### Python Commands
 ```pip
-- pip install -r requirements.txt
-- python post_twitter.py
+pip install -r requirements.txt
+python post_twitter.py
 ```
 ### Fix Tweepy Bug
 ```pip
-- pip install git+https://github.com/tweepy/tweepy
+pip install git+https://github.com/tweepy/tweepy
 ```
 ### Run Project
 ```pip
