@@ -14,6 +14,7 @@ This project uses these technologies:
 - [Tweepy](https://dototot.com/how-to-write-a-twitter-bot-with-python-and-tweepy/)
 - [PyGitHub](https://github.com/PyGithub/PyGithub)
 - [PyGitHub Doc](https://pygithub.readthedocs.io/en/latest/introduction.html)
+- [Schedule](https://pypi.org/project/schedule/)
 
 ## :computer: Commands
 ### Python Commands
