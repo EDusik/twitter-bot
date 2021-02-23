@@ -1,1 +1,0 @@
-worker: python post_twitter.py
