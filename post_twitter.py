@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import tweepy, time, sys
 import settings
 from pull_request import get_pull_request
