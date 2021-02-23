@@ -1,8 +1,17 @@
-from github import Github
 import settings
 import random
+from github import Github
+import tweepy
 
-# breakpoint()
+CONSUMER_KEY = settings.ENV['CONSUMER_KEY']
+CONSUMER_SECRET = settings.ENV['CONSUMER_SECRET']
+ACCESS_KEY = settings.ENV['ACCESS_KEY']
+ACCESS_SECRET = settings.ENV['ACCESS_SECRET']
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+tweepy = tweepy.API(auth)
+
 def get_pull_request():
 
   greetings = ['Hi, ', 'Hello, ', 'Hey, ', 'Hi there, ', 'Hello there, ', 'Hey there, ']
@@ -11,11 +20,8 @@ def get_pull_request():
 
   g = Github(settings.ENV['USER_GITHUB'], settings.ENV['PSWD_GITHUB'])
   repo = g.get_repo(settings.ENV['REPO_GITHUB'])
-
-  try:
-    pulls = repo.get_pulls(state='open', sort='created', base='master')
-    for pr in pulls:
-      return random.choice(greetings) + random.choice(subject) + pr.title + preposition + settings.ENV['URL'] + '.'
-  except:
-    return null
+  pulls = repo.get_pulls(state='open', sort='created', base='master')
+  
+  for pr in pulls:
+    tweepy.update_status(random.choice(greetings) + random.choice(subject) + pr.title + preposition + settings.ENV['URL'] + '.')
 
