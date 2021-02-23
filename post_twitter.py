@@ -13,7 +13,7 @@ pulls = repo.get_pulls(state='open', sort='created', base='master')
 
 if pulls:
   for pr in pulls:
-    schedule.every().day.at("10:35").do(update_twitter)
+    schedule.every().day.at("12:05").do(update_twitter)
 else:
   print('No pull requests today')
 
